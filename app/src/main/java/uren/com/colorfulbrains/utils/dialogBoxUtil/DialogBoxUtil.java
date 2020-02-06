@@ -8,20 +8,20 @@ import android.content.Intent;
 import android.os.Handler;
 import android.widget.ArrayAdapter;
 
-import uren.com.myduties.R;
-import uren.com.myduties.utils.CommonUtils;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.InfoDialogBoxCallback;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.PhotoChosenCallback;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.PhotoChosenForReportCallback;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.PhotoChosenForShareCallback;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.YesNoDialogBoxCallback;
+import uren.com.colorfulbrains.R;
+import uren.com.colorfulbrains.utils.CommonUtils;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.InfoDialogBoxCallback;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.PhotoChosenCallback;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.PhotoChosenForReportCallback;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.PhotoChosenForShareCallback;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.YesNoDialogBoxCallback;
 
-import static uren.com.myduties.constants.NumericConstants.CODE_CAMERA_POSITION;
-import static uren.com.myduties.constants.NumericConstants.CODE_GALLERY_POSITION;
-import static uren.com.myduties.constants.NumericConstants.CODE_PHOTO_EDIT;
-import static uren.com.myduties.constants.NumericConstants.CODE_PHOTO_REMOVE;
-import static uren.com.myduties.constants.NumericConstants.CODE_SCREENSHOT_POSITION;
-import static uren.com.myduties.constants.NumericConstants.REQUEST_CODE_ENABLE_LOCATION;
+import static uren.com.colorfulbrains.Constants.CustomConstants.CODE_CAMERA_POSITION;
+import static uren.com.colorfulbrains.Constants.CustomConstants.CODE_GALLERY_POSITION;
+import static uren.com.colorfulbrains.Constants.CustomConstants.CODE_PHOTO_EDIT;
+import static uren.com.colorfulbrains.Constants.CustomConstants.CODE_PHOTO_REMOVE;
+import static uren.com.colorfulbrains.Constants.CustomConstants.CODE_SCREENSHOT_POSITION;
+import static uren.com.colorfulbrains.Constants.CustomConstants.REQUEST_CODE_ENABLE_LOCATION;
 
 public class DialogBoxUtil {
 
