@@ -6,6 +6,7 @@ import java.util.Date;
 public class User {
     private String id;
     private String name;
+    private String email;
     private String profilePhotoUrl;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
@@ -21,6 +22,14 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setName(String name) {

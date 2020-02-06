@@ -47,19 +47,16 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import java.util.Objects;
 
 import io.fabric.sdk.android.Fabric;
-import uren.com.myduties.MainActivity;
-import uren.com.myduties.R;
-import uren.com.myduties.dbManagement.UserDBHelper;
-import uren.com.myduties.interfaces.CompleteCallback;
-import uren.com.myduties.interfaces.OnCompleteCallback;
-import uren.com.myduties.models.LoginUser;
-import uren.com.myduties.models.User;
-import uren.com.myduties.utils.CommonUtils;
-import uren.com.myduties.utils.ShapeUtil;
-import uren.com.myduties.utils.dataModelUtil.UserDataUtil;
 
-import static uren.com.myduties.constants.StringConstants.LOGIN_METHOD_GOOGLE;
-import static uren.com.myduties.constants.StringConstants.LOGIN_USER;
+import uren.com.colorfulbrains.MainActivity;
+import uren.com.colorfulbrains.Models.LoginUser;
+import uren.com.colorfulbrains.R;
+import uren.com.colorfulbrains.interfaces.CompleteCallback;
+import uren.com.colorfulbrains.utils.CommonUtils;
+import uren.com.colorfulbrains.utils.ShapeUtil;
+import uren.com.myduties.dbManagement.UserDBHelper;
+
+import static uren.com.colorfulbrains.Constants.CustomConstants.LOGIN_USER;
 
 public class LoginActivity extends AppCompatActivity
         implements View.OnClickListener {
@@ -350,13 +347,6 @@ public class LoginActivity extends AppCompatActivity
     }
 
     private void setUserInfo(String userName, String userEmail) {
-
-        if (!userName.isEmpty()) {
-            loginUser.setUsername(userName);
-        } else {
-            loginUser.setUsername("undefined");
-        }
-
         loginUser.setEmail(userEmail);
         loginUser.setUserId(Objects.requireNonNull(mAuth.getCurrentUser()).getUid());
     }

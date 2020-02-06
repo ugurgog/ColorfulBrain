@@ -7,8 +7,8 @@ public class CustomConstants {
     //Group Request Types
     public static final String LOGIN_USER = "loginUser";
     public static final String APP_GOOGLE_PLAY_DEFAULT_LINK = "https://play.google.com/store/apps/details?id=";
-    public static final String APP_PACKAGE_NAME = "uren.com.myduties";
-    public static final String APP_FB_URL = "https://my-duties-4ed4b.firebaseio.com/";
+    public static final String APP_PACKAGE_NAME = "uren.com.colorfulbrains";
+    public static final String APP_FB_URL = "https://colorful-intelligence.firebaseio.com/";
 
     //Character constants
     public static final String CHAR_AMPERSAND = "@";

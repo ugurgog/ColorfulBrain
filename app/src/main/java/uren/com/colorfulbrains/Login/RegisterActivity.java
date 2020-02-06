@@ -35,6 +35,8 @@ import uren.com.colorfulbrains.utils.ShapeUtil;
 import uren.com.colorfulbrains.utils.dialogBoxUtil.DialogBoxUtil;
 import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.InfoDialogBoxCallback;
 
+import static uren.com.colorfulbrains.Constants.CustomConstants.LOGIN_USER;
+
 public class RegisterActivity extends AppCompatActivity
         implements View.OnClickListener {
 
@@ -245,8 +247,7 @@ public class RegisterActivity extends AppCompatActivity
     private void addUserToSystem( String username, String email){
 
         User user = new User();
-        user.setUserid(mAuth.getCurrentUser().getUid());
-        user.setUsername(username);
+        user.setId(mAuth.getCurrentUser().getUid());
         user.setEmail(email);
         user.setAdmin(false);
         UserDBHelper.addUser(user, new OnCompleteCallback() {
@@ -265,7 +266,6 @@ public class RegisterActivity extends AppCompatActivity
     private void setUserInfo(String userName, String userEmail) {
 
         newLoginUser = new LoginUser();
-        newLoginUser.setUsername(userName);
         newLoginUser.setEmail(userEmail);
         newLoginUser.setUserId(Objects.requireNonNull(mAuth.getCurrentUser()).getUid());
     }

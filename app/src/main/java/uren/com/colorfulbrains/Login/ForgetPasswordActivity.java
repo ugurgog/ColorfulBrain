@@ -24,14 +24,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Objects;
 
 import io.fabric.sdk.android.Fabric;
-import uren.com.myduties.R;
-import uren.com.myduties.utils.CommonUtils;
-import uren.com.myduties.utils.ShapeUtil;
-import uren.com.myduties.utils.dialogBoxUtil.DialogBoxUtil;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.InfoDialogBoxCallback;
+import uren.com.colorfulbrains.R;
+import uren.com.colorfulbrains.utils.CommonUtils;
+import uren.com.colorfulbrains.utils.ShapeUtil;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.DialogBoxUtil;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.InfoDialogBoxCallback;
 
-import static uren.com.myduties.constants.StringConstants.APP_FB_URL;
-import static uren.com.myduties.constants.StringConstants.APP_PACKAGE_NAME;
+import static uren.com.colorfulbrains.Constants.CustomConstants.APP_FB_URL;
+import static uren.com.colorfulbrains.Constants.CustomConstants.APP_PACKAGE_NAME;
 
 public class ForgetPasswordActivity extends AppCompatActivity implements View.OnClickListener {
 

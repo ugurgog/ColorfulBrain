@@ -11,8 +11,8 @@ import android.widget.TextView;
 import java.util.Objects;
 
 import pl.droidsonroids.gif.GifImageView;
-import uren.com.myduties.R;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.GifDialogListener;
+import uren.com.colorfulbrains.R;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.GifDialogListener;
 
 
 public class GifDialogBox {
