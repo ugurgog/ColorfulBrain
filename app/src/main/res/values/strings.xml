@@ -302,15 +302,32 @@
     <string name="task_type_pet">Pet</string>
 
 
+    <string name="AWFUL_LEVEL">Awful Level</string>
+    <string name="POOR_LEVEL">Bad Level</string>
+    <string name="NORMAL_LEVEL">Normal Level</string>
+    <string name="GOOD_LEVEL">Good Level</string>
+    <string name="SUPER_LEVEL">Super Level</string>
+    <string name="MEGA_LEVEL">Mega Level</string>
+
+
+    <string name="AWFUL_LEVEL_DESC">You got a very bad score from this game. We realize that the questions are not very easy, but you should improve yourself a little.</string>
+    <string name="POOR_LEVEL_DESC">You got a bad score from this game. But we believe it will be :) Stay tuned, we have a lot of questions to ask :)</string>
+    <string name="NORMAL_LEVEL_DESC">You have stayed at the normal level in this game, but do not worry… The progress is very good, we hope that we will see you at a mega level one day :)</string>
+    <string name="GOOD_LEVEL_DESC">You made a good game, congratulations :) You are on a fast rise. We hope this stability does not deteriorate and we will see you at a mega level in the next games :)</string>
+    <string name="SUPER_LEVEL_DESC">A super game, congratulations. You are far above average. We could not give you a gift in this game, but you are very close :) We hope you will be one of the winners in our next games.</string>
+    <string name="MEGA_LEVEL_DESC">You must be a genius. You have fascinated us with your intelligence. Serious research needs to be done on your brain :)</string>
+
+
+
     <string name="FCM_SERVER_KEY" tools:ignore="MissingTranslation">xxxx</string>
 
-    <string name="ADMOB_APP_ID" tools:ignore="MissingTranslation">xxxx</string>
-    <string name="ADMOB_BANNER_AD_UNIT_ID" tools:ignore="MissingTranslation">xxxx</string>
+    <string name="ADMOB_APP_ID" tools:ignore="MissingTranslation">ca-app-pub-5661269339227120~3867282925</string>
+    <!--string name="ADMOB_BANNER_AD_UNIT_ID" tools:ignore="MissingTranslation">ca-app-pub-5661269339227120/8592995998</string-->
     <string name="ADMOB_INTERSITITIAL_AD_UNIT_ID" tools:ignore="MissingTranslation">xxxx</string>
 
 
     <!--Test-->
-    <!--<string name="ADMOB_BANNER_AD_UNIT_ID" tools:ignore="MissingTranslation">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ADMOB_INTERSITITIAL_AD_UNIT_ID" tools:ignore="MissingTranslation">ca-app-pub-3940256099942544/1033173712</string>-->
+    <string name="ADMOB_BANNER_AD_UNIT_ID" tools:ignore="MissingTranslation">ca-app-pub-3940256099942544/6300978111</string>
+    <!--string name="ADMOB_INTERSITITIAL_AD_UNIT_ID" tools:ignore="MissingTranslation">ca-app-pub-3940256099942544/1033173712</string>-->
 
 </resources>

@@ -15,13 +15,11 @@ import android.widget.TextView;
 
 import java.util.Objects;
 
-import uren.com.myduties.R;
-import uren.com.myduties.models.Group;
-import uren.com.myduties.models.User;
-import uren.com.myduties.utils.dataModelUtil.GroupDataUtil;
-import uren.com.myduties.utils.dataModelUtil.UserDataUtil;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.CustomDialogListener;
-import uren.com.myduties.utils.dialogBoxUtil.Interfaces.CustomDialogReturnListener;
+import uren.com.colorfulbrains.Models.User;
+import uren.com.colorfulbrains.R;
+import uren.com.colorfulbrains.utils.dataModelUtil.UserDataUtil;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.CustomDialogListener;
+import uren.com.colorfulbrains.utils.dialogBoxUtil.Interfaces.CustomDialogReturnListener;
 
 public class CustomDialogBox {
 
@@ -41,7 +39,6 @@ public class CustomDialogBox {
         String positiveBtnText = builder.positiveBtnText;
         String negativeBtnText = builder.negativeBtnText;
         User user = builder.user;
-        Group group = builder.group;
         boolean cancel = builder.cancel;
         long durationTime = builder.durationTime;
     }
@@ -63,7 +60,6 @@ public class CustomDialogBox {
         private CustomDialogReturnListener returnListener;
         private boolean cancel;
         private User user;
-        private Group group;
         private long durationTime;
 
         public Builder(Activity activity) {
@@ -151,11 +147,6 @@ public class CustomDialogBox {
             return this;
         }
 
-        public CustomDialogBox.Builder setGroup(Group group) {
-            this.group = group;
-            return this;
-        }
-
         public CustomDialogBox build() {
             final Dialog dialog = new Dialog(this.activity);
             dialog.requestWindowFeature(1);
@@ -195,16 +186,8 @@ public class CustomDialogBox {
 
             if (user != null) {
                 UserDataUtil.setProfilePicture(this.activity, user.getProfilePhotoUrl(),
-                        user.getName(), user.getUsername(), shortUserNameTv, profilePicImgView, false);
-                UserDataUtil.setNameOrUserName(user.getName(), user.getUsername(), usernameTextView);
-            } else if (group != null) {
-                GroupDataUtil.setGroupPicture(this.activity, group.getGroupPhotoUrl(),
-                        group.getName(), shortUserNameTv, profilePicImgView);
-
-                if (group.getName() != null && !group.getName().isEmpty())
-                    usernameTextView.setText(group.getName());
-                else
-                    usernameTextView.setVisibility(View.GONE);
+                        user.getName(), shortUserNameTv, profilePicImgView, false);
+                UserDataUtil.setNameOrUserName(user.getName(), usernameTextView);
             } else
                 relativelayout1.setVisibility(View.GONE);
 

@@ -1,4 +1,4 @@
-package uren.com.colorfulbrains.Login;
+package uren.com.colorfulbrains.login;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,7 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.crashlytics.android.Crashlytics;
 
 import io.fabric.sdk.android.Fabric;
-import uren.com.colorfulbrains.Login.adapters.AppIntroductionAdapter;
+import uren.com.colorfulbrains.login.adapters.AppIntroductionAdapter;
 import uren.com.colorfulbrains.MainActivity;
 import uren.com.colorfulbrains.Models.LoginUser;
 import uren.com.colorfulbrains.R;

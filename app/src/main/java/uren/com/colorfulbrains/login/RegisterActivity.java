@@ -1,4 +1,4 @@
-package uren.com.colorfulbrains.Login;
+package uren.com.colorfulbrains.login;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -41,14 +41,14 @@ public class RegisterActivity extends AppCompatActivity
         implements View.OnClickListener {
 
     RelativeLayout registerLayout;
-    EditText usernameET;
+    EditText nameET;
     EditText emailET;
     EditText passwordET;
     Button btnRegister;
 
     //Local
     LoginUser newLoginUser;
-    String userName;
+    String name;
     String userEmail;
     String userPassword;
     ProgressDialog progressDialog;
@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity
     }
 
     public void setShapes(){
-        usernameET.setBackground(ShapeUtil.getShape(getResources().getColor(R.color.transparent),
+        nameET.setBackground(ShapeUtil.getShape(getResources().getColor(R.color.transparent),
                 getResources().getColor(R.color.White), GradientDrawable.RECTANGLE, 20, 4));
         emailET.setBackground(ShapeUtil.getShape(getResources().getColor(R.color.transparent),
                 getResources().getColor(R.color.White), GradientDrawable.RECTANGLE, 20, 4));
@@ -82,12 +82,12 @@ public class RegisterActivity extends AppCompatActivity
 
     private void init() {
         registerLayout = findViewById(R.id.registerLayout);
-        usernameET = findViewById(R.id.input_username);
+        nameET = findViewById(R.id.input_name);
         emailET = findViewById(R.id.input_email);
         passwordET = findViewById(R.id.input_password);
         btnRegister = findViewById(R.id.btnRegister);
         registerLayout.setOnClickListener(this);
-        usernameET.setOnClickListener(this);
+        nameET.setOnClickListener(this);
         emailET.setOnClickListener(this);
         passwordET.setOnClickListener(this);
         btnRegister.setOnClickListener(this);
@@ -136,16 +136,16 @@ public class RegisterActivity extends AppCompatActivity
         progressDialog.setMessage(this.getString(R.string.REGISTERING_USER));
         progressDialog.show();
 
-        userName = usernameET.getText().toString();
+        name = nameET.getText().toString();
         userEmail = emailET.getText().toString();
         userPassword = passwordET.getText().toString();
 
         //validation controls
-        if (!checkValidation(userName, userEmail, userPassword)) {
+        if (!checkValidation(name, userEmail, userPassword)) {
             return;
         }
 
-        createUser(userName, userEmail, userPassword);
+        createUser(name, userEmail, userPassword);
 
     }
 
@@ -211,7 +211,7 @@ public class RegisterActivity extends AppCompatActivity
                         if (task.isSuccessful()) {
                             Log.i("Info", "CreateUser : Success");
                             progressDialog.dismiss();
-                            setUserInfo(userName, userEmail);
+                            setUserInfo(userEmail);
                             addUserToSystem(userName, userEmail);
 
                             //startAppIntroPage();
@@ -250,7 +250,11 @@ public class RegisterActivity extends AppCompatActivity
         user.setId(mAuth.getCurrentUser().getUid());
         user.setEmail(email);
         user.setAdmin(false);
-        UserDBHelper.addUser(user, new OnCompleteCallback() {
+
+        startAppIntroPage();
+
+
+        /*UserDBHelper.addUser(user, new OnCompleteCallback() {
             @Override
             public void OnCompleted() {
                 startAppIntroPage();
@@ -260,10 +264,10 @@ public class RegisterActivity extends AppCompatActivity
             public void OnFailed(String message) {
 
             }
-        });
+        });*/
     }
 
-    private void setUserInfo(String userName, String userEmail) {
+    private void setUserInfo(String userEmail) {
 
         newLoginUser = new LoginUser();
         newLoginUser.setEmail(userEmail);

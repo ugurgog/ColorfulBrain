@@ -294,4 +294,19 @@
     <string name="task_type_love">İlişki</string>
     <string name="task_type_child">Çocuklar</string>
     <string name="task_type_pet">Evcil Hayvan</string>
+
+    <string name="AWFUL_LEVEL">Çok Kötü Seviye</string>
+    <string name="POOR_LEVEL">Kötü</string>
+    <string name="NORMAL_LEVEL">Normal Seviye</string>
+    <string name="GOOD_LEVEL">İyi Seviye</string>
+    <string name="SUPER_LEVEL">Süper Seviye</string>
+    <string name="MEGA_LEVEL">Mega Seviye</string>
+
+
+    <string name="AWFUL_LEVEL_DESC">Bu oyundan çok kötü bir skor elde ettiniz. Soruların çok kolay olmadığının farkındayız ama siz de kendinizi biraz geliştirmelisiniz.</string>
+    <string name="POOR_LEVEL_DESC">Bu oyundan kötü bir skor elde ettiniz. Ama olacak biz inanıyoruz :) Bizi takipte kalın, soracak çok sorumuz var :)</string>
+    <string name="NORMAL_LEVEL_DESC">Bu oyunda normal seviyede kaldınız ama üzülmeyin… Gidişat çok iyi, umuyoruz ki sizi de bir gün mega seviye de göreceğiz :) </string>
+    <string name="GOOD_LEVEL_DESC">İyi bir oyun çıkardınız, tebrik ederiz :) Hızlı bir yükseliştesiniz. Umarız bu istikrar bozulmaz ve sonraki oyunlarda sizi mega seviyede görürüz :)</string>
+    <string name="SUPER_LEVEL_DESC">Süper bir oyun, tebrikler. Ortalamanın çok üstündesiniz. Size bu oyunda hediye veremedik ama çok yaklaştınız :) Umarız bir sonraki oyunlarımızda heidye kazananlardan biri de siz olursunuz.</string>
+    <string name="MEGA_LEVEL_DESC">Siz bir dahi olmalısınız. Zekanızla bizi adeta büyülediniz. Beyniniz üzerinde ciddi araştırmalar yapılması gerekiyor :)</string>
 </resources>

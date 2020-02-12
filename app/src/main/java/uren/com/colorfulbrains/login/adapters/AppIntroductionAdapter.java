@@ -1,4 +1,4 @@
-package uren.com.colorfulbrains.Login.adapters;
+package uren.com.colorfulbrains.login.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

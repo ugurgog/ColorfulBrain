@@ -1,4 +1,4 @@
-package uren.com.colorfulbrains.Login;
+package uren.com.colorfulbrains.login;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -51,10 +51,8 @@ import io.fabric.sdk.android.Fabric;
 import uren.com.colorfulbrains.MainActivity;
 import uren.com.colorfulbrains.Models.LoginUser;
 import uren.com.colorfulbrains.R;
-import uren.com.colorfulbrains.interfaces.CompleteCallback;
 import uren.com.colorfulbrains.utils.CommonUtils;
 import uren.com.colorfulbrains.utils.ShapeUtil;
-import uren.com.myduties.dbManagement.UserDBHelper;
 
 import static uren.com.colorfulbrains.Constants.CustomConstants.LOGIN_USER;
 
@@ -386,7 +384,7 @@ public class LoginActivity extends AppCompatActivity
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            UserDBHelper.getUser(user.getUid(), new CompleteCallback() {
+                            /*UserDBHelper.getUser(user.getUid(), new CompleteCallback() {
                                 @Override
                                 public void onComplete(Object object) {
                                     if(object == null || ((User) object).getUserid() == null){
@@ -429,7 +427,7 @@ public class LoginActivity extends AppCompatActivity
                                 public void onFailed(String message) {
                                     CommonUtils.showToastShort(LoginActivity.this, message);
                                 }
-                            });
+                            });*/
 
                         } else {
                             CommonUtils.showToastShort(LoginActivity.this, task.getException().toString());

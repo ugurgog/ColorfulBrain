@@ -10,19 +10,16 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import uren.com.myduties.R;
-import uren.com.myduties.models.User;
-import uren.com.myduties.utils.CommonUtils;
-import uren.com.myduties.utils.ShapeUtil;
+import uren.com.colorfulbrains.Models.User;
+import uren.com.colorfulbrains.R;
+import uren.com.colorfulbrains.utils.CommonUtils;
+import uren.com.colorfulbrains.utils.ShapeUtil;
 
-import static uren.com.myduties.constants.StringConstants.CHAR_AMPERSAND;
-import static uren.com.myduties.constants.StringConstants.fb_child_status_friend;
-import static uren.com.myduties.constants.StringConstants.fb_child_status_sendedrequest;
-import static uren.com.myduties.constants.StringConstants.fb_child_status_waiting;
+import static uren.com.colorfulbrains.Constants.CustomConstants.CHAR_AMPERSAND;
 
 public class UserDataUtil {
 
-    public static void setNameOrUserName(String name, String username, TextView textView) {
+    public static void setNameOrUserName(String name, TextView textView) {
         int nameMaxLen = 25;
 
         if (name != null && !name.isEmpty()) {
@@ -30,11 +27,6 @@ public class UserDataUtil {
                 textView.setText(name.trim().substring(0, nameMaxLen) + "...");
             else
                 textView.setText(name);
-        } else if (username != null && !username.isEmpty()) {
-            if (username.length() > nameMaxLen)
-                textView.setText(CHAR_AMPERSAND + username.trim().substring(0, nameMaxLen) + "...");
-            else
-                textView.setText(CHAR_AMPERSAND + username);
         } else
             textView.setVisibility(View.GONE);
     }
@@ -66,12 +58,7 @@ public class UserDataUtil {
                 return user.getName().trim().substring(0, nameMaxLen) + "...";
             else
                 return user.getName();
-        } else if (user.getUsername() != null && !user.getUsername().isEmpty()) {
-            if (user.getUsername().length() > nameMaxLen)
-                return CHAR_AMPERSAND + user.getUsername().trim().substring(0, nameMaxLen) + "...";
-            else
-                return CHAR_AMPERSAND + user.getUsername();
-        } else
+        }else
             return "unknown";
     }
 
@@ -85,18 +72,6 @@ public class UserDataUtil {
                 nameTextView.setText(name);
         } else if (nameTextView != null)
             nameTextView.setVisibility(View.GONE);
-    }
-
-    public static void setUsername(String username, TextView usernameTextView) {
-        int nameMaxLen = 25;
-        if (username != null && usernameTextView != null && !username.isEmpty()) {
-            usernameTextView.setVisibility(View.VISIBLE);
-            if (username.length() > nameMaxLen)
-                usernameTextView.setText(CHAR_AMPERSAND + username.trim().substring(0, nameMaxLen) + "...");
-            else
-                usernameTextView.setText(CHAR_AMPERSAND + username);
-        } else if (usernameTextView != null)
-            usernameTextView.setVisibility(View.GONE);
     }
 
     public static String getShortenUserName(String name) {
@@ -124,7 +99,7 @@ public class UserDataUtil {
         return returnValue.toString();
     }
 
-    public static int setProfilePicture(Context context, String url, String name, String username, TextView shortNameTv,
+    public static int setProfilePicture(Context context, String url, String name, TextView shortNameTv,
                                         ImageView profilePicImgView, boolean circleColorVal) {
         if (context == null) return 0;
 
@@ -141,10 +116,6 @@ public class UserDataUtil {
             if (name != null && !name.trim().isEmpty()) {
                 shortNameTv.setVisibility(View.VISIBLE);
                 shortNameTv.setText(UserDataUtil.getShortenUserName(name));
-                profilePicImgView.setImageDrawable(null);
-            } else if (username != null && !username.trim().isEmpty()) {
-                shortNameTv.setVisibility(View.VISIBLE);
-                shortNameTv.setText(UserDataUtil.getShortenUserName(username));
                 profilePicImgView.setImageDrawable(null);
             } else {
                 shortNameTv.setVisibility(View.GONE);
@@ -180,44 +151,6 @@ public class UserDataUtil {
         else return 0;
     }
 
-    public static void updateFriendButton(Context context, String followStatus, Button displayButton, Boolean isHideKeybard) {
-
-        if (isHideKeybard != null && isHideKeybard)
-            CommonUtils.hideKeyBoard(context);
-
-        GradientDrawable buttonShape = null;
-        //displayButton.setVisibility(View.VISIBLE);
-
-        if (followStatus.equals(fb_child_status_friend)) {
-            //takip ediliyor
-            displayButton.setText(context.getResources().getString(R.string.friend));
-            displayButton.setTextColor(context.getResources().getColor(R.color.Black));
-            buttonShape = ShapeUtil.getShape(context.getResources().getColor(R.color.White),
-                    context.getResources().getColor(R.color.Gray), GradientDrawable.RECTANGLE, 15, 2);
-
-        } else if (followStatus.equals(fb_child_status_sendedrequest)) {
-            //istek gonderildi
-            displayButton.setText(context.getResources().getString(R.string.request_sended));
-            displayButton.setTextColor(context.getResources().getColor(R.color.White));
-            buttonShape = ShapeUtil.getShape(context.getResources().getColor(R.color.Silver),
-                    0, GradientDrawable.RECTANGLE, 15, 0);
-        } else if (followStatus.equals(fb_child_status_waiting)) {
-            //istek bana gelmis
-            displayButton.setText(context.getResources().getString(R.string.acceptReq));
-            displayButton.setTextColor(context.getResources().getColor(R.color.White));
-            buttonShape = ShapeUtil.getShape(context.getResources().getColor(R.color.Silver),
-                    0, GradientDrawable.RECTANGLE, 15, 0);
-        } else {
-            //arkadas degil bi bagimiz yok
-            displayButton.setText(context.getResources().getString(R.string.addFriend));
-            displayButton.setTextColor(context.getResources().getColor(R.color.White));
-            buttonShape = ShapeUtil.getShape(context.getResources().getColor(R.color.DodgerBlue),
-                    0, GradientDrawable.RECTANGLE, 15, 0);
-        }
-
-        displayButton.setBackground(buttonShape);
-    }
-
     public static void updateInviteButton(Context context, Button displayButton, Boolean isHideKeyboard) {
         if (isHideKeyboard != null && isHideKeyboard)
             CommonUtils.hideKeyBoard(context);
@@ -230,23 +163,4 @@ public class UserDataUtil {
 
         displayButton.setBackground(buttonShape);
     }
-
-    public static void updatePendingApproveButton(Context context, Button displayButton) {
-        CommonUtils.hideKeyBoard(context);
-        GradientDrawable buttonShape;
-        displayButton.setTextColor(context.getResources().getColor(R.color.White));
-        buttonShape = ShapeUtil.getShape(context.getResources().getColor(R.color.DodgerBlue),
-                context.getResources().getColor(R.color.White), GradientDrawable.RECTANGLE, 15, 1);
-        displayButton.setBackground(buttonShape);
-    }
-
-    public static void updatePendingRejectButton(Context context, Button displayButton) {
-        CommonUtils.hideKeyBoard(context);
-        GradientDrawable buttonShape;
-        displayButton.setTextColor(context.getResources().getColor(R.color.Black));
-        buttonShape = ShapeUtil.getShape(context.getResources().getColor(R.color.White),
-                context.getResources().getColor(R.color.Gray), GradientDrawable.RECTANGLE, 15, 2);
-        displayButton.setBackground(buttonShape);
-    }
-
 }
